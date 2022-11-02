@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move element &apos;NextDate.java&apos; to &apos;lab1&apos;&#x0A;- Original project: &apos;labs&apos;&#x0A;- Destination element: &apos;lab1&apos;&#x0A;- Original element: &apos;NextDate.java&apos;&#x0A;- Update references to refactored element" description="Move file" element1="NextDate.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1667399650059" target="lab1" units="0" version="1.0"/>
-</session>
