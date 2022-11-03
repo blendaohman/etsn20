@@ -5,7 +5,7 @@ package lab1;
 
 public class NextDate {
 	
-	
+
 	public NextDate(int m, int d, int y)
 	{
 		//int month, day, year; //varibles holding the month, day and year args
@@ -27,7 +27,7 @@ public class NextDate {
 		//Restrictions that the year must have the following invariant: 1801 <= year <= 2021
 		
 		if (day < 1 || month < 1 || month >12 || year < 1801 || year > 2021)
-			return "invalid Input Date";
+			return "Invalid Input Date";
 		
 		//these variables will hold the proper values for the nextDate's day, month, and year values, respectively
 		int tomorrowDay = day;
