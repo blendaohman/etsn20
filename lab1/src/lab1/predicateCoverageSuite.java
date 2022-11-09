@@ -43,6 +43,17 @@ class predicateCoverageSuite {
 		assertTrue("31 month did not all work", jan && mar && may && jul && aug && oct && dec);
 	}
 	
+	/* Testing correct 31 day month going to next month */
+	@Test
+	public void _31dayMonthDay31() {
+		
+		String nextDate = date.run(1, 31, 1801);
+		assertEquals("Date was not matching", "2/1/1801", nextDate);
+		
+	}
+	
+	
+	
 	/* Testing correct 30 day month */
 	@Test
 	public void _30dayMonths() {
@@ -62,6 +73,17 @@ class predicateCoverageSuite {
 		assertTrue("30 month did not all work", apr && jun && sep && nov);
 		
 	}
+	
+
+	/* Testing correct 30 day month on day 30, going to next month*/
+	@Test
+	public void _30dayMonthDay30() {
+		
+		String nextDate = date.run(4, 30, 1801);
+		assertEquals("Date was not matching", "5/1/1801", nextDate);
+	}
+	
+	
 	/* Test all possible dates out of range */
 	@Test
 	public void allDateOutOfRange() {
