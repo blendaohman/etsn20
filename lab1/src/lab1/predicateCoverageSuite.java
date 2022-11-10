@@ -283,16 +283,16 @@ class predicateCoverageSuite {
 	@Test
 	public void evenLeapYear() {
 		
-		String nextDate = date.run(2, 29, 2000);
-		assertEquals("3/1/2000", nextDate);
+		String nextDate = date.run(2, 28, 2000);
+		assertEquals("2/29/2000", nextDate);
 		
 	}
 	
 	@Test
-	public void unEvenLeapYear() {
+	public void evenYearNotLeap() {
 		
-		String nextDate = date.run(2, 29, 1900);
-		assertEquals("3/1/2000", nextDate);
+		String nextDate = date.run(2, 28, 1900);
+		assertEquals("3/1/1900", nextDate);
 		
 	}
 	
