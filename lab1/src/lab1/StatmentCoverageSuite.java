@@ -17,7 +17,7 @@ class StatmentCoverageSuite {
 	public void _30dayMonth() {
 		
 		String nextDate = date.run(4, 1, 1801);
-		assertEquals( "4/2/1801", nextDate);
+		assertEquals(nextDate, "4/2/1801");
 		
 	}
 	
@@ -26,7 +26,7 @@ class StatmentCoverageSuite {
 	public void _30dayMonthDay30() {
 		
 		String nextDate = date.run(4, 30, 1801);
-		assertEquals("5/1/1801", nextDate);
+		assertEquals(nextDate, "5/1/1801");
 		
 	}
 	
@@ -35,7 +35,7 @@ class StatmentCoverageSuite {
 	public void _31dayMonth() {
 		//Datum returneras MM/DD/YY
 		String nextDate = date.run(1, 30, 1801);
-		assertEquals("1/31/1801", nextDate);
+		assertEquals(nextDate,"1/31/1801");
 		
 	}
 	
@@ -44,7 +44,7 @@ class StatmentCoverageSuite {
 	public void december() {
 		
 		String nextDate = date.run(12, 1, 1801);
-		assertEquals("12/2/1801", nextDate);
+		assertEquals(nextDate,"12/2/1801");
 		
 	}
 	
@@ -52,7 +52,7 @@ class StatmentCoverageSuite {
 	public void december31Year2021() {
 		
 		String nextDate = date.run(12, 31, 2021);
-		assertEquals(INVALID_NEXT_YEAR, nextDate);
+		assertEquals(nextDate,INVALID_NEXT_YEAR);
 		
 	}
 	
@@ -61,7 +61,7 @@ class StatmentCoverageSuite {
 	public void febuary() {
 		
 		String nextDate = date.run(2, 27, 1801);
-		assertEquals("2/28/1801", nextDate);
+		assertEquals(nextDate, "2/28/1801");
 		
 	}
 	/* Testing febuary, not a leap year*/
@@ -69,7 +69,7 @@ class StatmentCoverageSuite {
 	public void febuary28() {
 		
 		String nextDate = date.run(2, 28, 1801);
-		assertEquals("3/1/1801", nextDate);
+		assertEquals(nextDate, "3/1/1801");
 		
 	}
 	
@@ -78,7 +78,7 @@ class StatmentCoverageSuite {
 	public void febuary28LeapYear() {
 		
 		String nextDate = date.run(2, 28, 2020);
-		assertEquals("2/29/2020", nextDate);
+		assertEquals(nextDate, "2/29/2020");
 		
 	}
 	
@@ -86,7 +86,7 @@ class StatmentCoverageSuite {
 	public void febuary29LeapYear() {
 		
 		String nextDate = date.run(2, 29, 2020);
-		assertEquals("3/1/2020", nextDate);
+		assertEquals(nextDate, "3/1/2020");
 		
 	}
 	
@@ -94,7 +94,7 @@ class StatmentCoverageSuite {
 	public void febuary30() {
 		
 		String nextDate = date.run(2, 30, 2020);
-		assertEquals( INVALID_INPUT_DATE, nextDate);
+		assertEquals(nextDate, INVALID_INPUT_DATE);
 		
 	}
 	
@@ -105,7 +105,7 @@ class StatmentCoverageSuite {
 		String nextDate = date.run(10, 2, 1800);
 		
 		//First string is in case the test does not pass
-		assertEquals(INVALID_INPUT_DATE, nextDate);
+		assertEquals(nextDate, INVALID_INPUT_DATE);
 			
 	}
 	
