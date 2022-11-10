@@ -105,30 +105,7 @@ class branchCoverageSuite extends TestCase{
 		assertEquals("Date was not matching", INVALID_NEXT_YEAR, nextDate);
 		
 	}
-	
-	/* This test works but is giving incorrect result. We do not want it to give
-	 * the next year when its december 32 because this does not exist.
-	 * Should be invalid date.*/
-	@Test
-	public void december32() {
-		
-		String nextDate = date.run(12, 32, 1801);
-		assertEquals("Date was not matching", "1/1/1802", nextDate);
-		//assertEquals("Date was not matching", INVALID_INPUT_DATE, nextDate);
-		
-		
-	}
-	
-	/* This test works but is giving incorrect result. We do not want it to give
-	 * the next year when its december 32 because this does not exist*/
-	@Test
-	public void december32Year2021() {
-		
-		String nextDate = date.run(12, 32, 2021);
-		assertEquals("Date was not matching", INVALID_NEXT_YEAR, nextDate);
-		//assertEquals("Date was not matching", INVALID_INPUT_DATE, nextDate);
-		
-	}
+
 	/* Testing febuary*/
 	@Test
 	public void febuary() {
