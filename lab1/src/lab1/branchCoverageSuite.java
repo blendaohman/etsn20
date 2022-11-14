@@ -166,7 +166,5 @@ class branchCoverageSuite extends TestCase{
 		
 	}
 	
-	
-	
 
 }

@@ -20,42 +20,42 @@ class predicateCoverageSuite {
 	public void january() {
 		//Datum returneras MM/DD/YY
 		String nextDate = date.run(1, 1, 2020);
-		assertEquals(nextDate, "1/2/2020");
+		assertEquals("1/2/2020", nextDate);
 	}
 	
 	@Test
 	public void march() {
 		//Datum returneras MM/DD/YY
 		String nextDate = date.run(3, 1, 2020);
-		assertEquals(nextDate, "3/2/2020");
+		assertEquals("3/2/2020", nextDate);
 	}
 	
 	@Test
 	public void may() {
 		//Datum returneras MM/DD/YY
 		String nextDate = date.run(5, 1, 2020);
-		assertEquals(nextDate, "5/2/2020");
+		assertEquals("5/2/2020", nextDate);
 	}
 	
 	@Test
 	public void july() {
 		//Datum returneras MM/DD/YY
 		String nextDate = date.run(7, 1, 2020);
-		assertEquals(nextDate, "7/2/2020");
+		assertEquals("7/2/2020", nextDate);
 	}
 	
 	@Test
 	public void august() {
 		//Datum returneras MM/DD/YY
 		String nextDate = date.run(8, 1, 2020);
-		assertEquals(nextDate, "8/2/2020");
+		assertEquals("8/2/2020", nextDate);
 	}
 	
 	@Test
 	public void october() {
 		//Datum returneras MM/DD/YY
 		String nextDate = date.run(10, 1, 2020);
-		assertEquals(nextDate, "10/2/2020");
+		assertEquals("10/2/2020", nextDate);
 	}
 	
 	
@@ -72,28 +72,28 @@ class predicateCoverageSuite {
 	@Test
 	public void april() {
 		String nextDate = date.run(4, 1, 2020);
-		assertEquals(nextDate, "4/2/2020");
+		assertEquals(nextDate, "4/2/2020", nextDate);
 		
 	}
 	
 	@Test
 	public void june() {
 		String nextDate = date.run(6, 1, 2020);
-		assertEquals(nextDate, "6/2/2020");
+		assertEquals( "6/2/2020", nextDate);
 		
 	}
 	
 	@Test
 	public void september() {
 		String nextDate = date.run(9, 1, 2020);
-		assertEquals(nextDate, "9/2/2020");
+		assertEquals( "9/2/2020", nextDate);
 		
 	}
 	
 	@Test
 	public void november() {
 		String nextDate = date.run(11, 1, 2020);
-		assertEquals(nextDate, "11/2/2020");
+		assertEquals( "11/2/2020", nextDate);
 		
 	}
 	
@@ -104,7 +104,7 @@ class predicateCoverageSuite {
 	public void _30dayMonthDay30() {
 		
 		String nextDate = date.run(4, 30, 1801);
-		assertEquals(nextDate, "5/1/1801");
+		assertEquals( "5/1/1801", nextDate);
 	}
 	
 	
@@ -115,7 +115,7 @@ class predicateCoverageSuite {
 		String nextDate = date.run(1, 0, 1801);
 		
 		//First string is in case the test does not pass
-		assertEquals(INVALID_INPUT_DATE, nextDate, "Date was invalid but returned valid");
+		assertEquals(INVALID_INPUT_DATE, nextDate);
 			
 	}
 
