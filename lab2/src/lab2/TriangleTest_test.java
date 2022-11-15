@@ -2,6 +2,8 @@ package lab2;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 //import static org.junit.Assert.*;
 
@@ -50,7 +52,7 @@ public class TriangleTest_test {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
-	@Before
+	@BeforeEach
 	/*
 	 * Initializes common objects. The method will be run before the Test method.
 	 */
@@ -97,13 +99,58 @@ public class TriangleTest_test {
 	 * by JUnit as a failure. If no exceptions are thrown, the test is assumed to have 
 	 * succeeded. 
 	*/
-	public void alltests() {
+	public void rightAngleValid() {
 		assertTrue("Should return true for a right-angled triangle", rightAngledTriangle.isRightAngled());
 		assertEquals(6, rightAngledTriangle.getArea());
-		assertEquals(14, rightAngledTriangle.getPerimeter());
-		assertEquals("3, 4 , 5", rightAngledTriangle.getSideLengths());
-		
-		assertEquals("Should return 'right-angled'", "right-angled", rightAngledTriangle.classify());		
+		assertEquals(12, rightAngledTriangle.getPerimeter());
+		assertEquals("3,4,5", rightAngledTriangle.getSideLengths());
+		assertEquals("right-angled", rightAngledTriangle.classify());		
 	}
-
+	
+	//Not really done
+	@Test
+	public void rightAngleInvalid() {
+		assertTrue("Should return true for a right-angled triangle", rightAngledTriangle.isRightAngled());
+		assertEquals(6, rightAngledTriangle.getArea());
+		assertEquals(12, rightAngledTriangle.getPerimeter());
+		assertEquals("3,4,5", rightAngledTriangle.getSideLengths());
+		assertEquals("right-angled", rightAngledTriangle.classify());		
+	}
+	
+	//need proof reading
+	@Test
+	public void equilateralTriangleValid() {
+		assertTrue("Should return true for a equilateral Triangle", equilateralTriangle.isEquilateral());
+		assertEquals(0,.5, equilateralTriangle.getArea());
+		assertEquals(3, equilateralTriangle.getPerimeter());
+		assertEquals("1,1,1", equilateralTriangle.getSideLengths());
+		assertEquals("Equilateral", equilateralTriangle.classify());		
+	}
+	
+	@Test
+	public void isoscelesTriangleValid() {
+		assertTrue("Should return true for a isoscelesTriangle triangle", isoscelesTriangle.isIsosceles()());
+		assertEquals(, isoscelesTriangle.getArea());
+		assertEquals(, isoscelesTriangle.getPerimeter());
+		assertEquals("", isoscelesTriangle.getSideLengths());
+		assertEquals("", isoscelesTriangle.classify());		
+	}
+	
+	@Test
+	public void scaleneTriangleValid() {
+		assertTrue("Should return true for a scalene triangle", scaleneTriangle.isScalene());
+		assertEquals(, scaleneTriangle.getArea());
+		assertEquals(, scaleneTriangle.getPerimeter());
+		assertEquals("", scaleneTriangle.getSideLengths());
+		assertEquals("", scaleneTriangle.classify());		
+	}
+	
+	@Test
+	public void ImpossibleValid() {
+		assertTrue("Should return true for an impossible triangle", impossibleTriangle.isImpossible());
+		assertEquals(, impossibleTriangle.getArea());
+		assertEquals(, impossibleTriangle.getPerimeter());
+		assertEquals("", impossibleTriangle.getSideLengths());
+		assertEquals("", impossibleTriangle.classify());		
+	}
 }
