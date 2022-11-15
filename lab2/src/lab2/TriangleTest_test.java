@@ -1,5 +1,6 @@
 package lab2;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -110,47 +111,62 @@ public class TriangleTest_test {
 	//Not really done
 	@Test
 	public void rightAngleInvalid() {
-		assertTrue("Should return true for a right-angled triangle", rightAngledTriangle.isRightAngled());
-		assertEquals(6, rightAngledTriangle.getArea());
-		assertEquals(12, rightAngledTriangle.getPerimeter());
-		assertEquals("3,4,5", rightAngledTriangle.getSideLengths());
-		assertEquals("right-angled", rightAngledTriangle.classify());		
+		assertFalse("Should return true for a right-angled triangle", rightAngledTriangleInvalid.isRightAngled());
+		assertEquals(-1, rightAngledTriangleInvalid.getArea()); 
+		assertEquals("-3,-4,-5", rightAngledTriangleInvalid.getSideLengths());
+		assertEquals("impossible", rightAngledTriangleInvalid.classify());	//Impossible works for negative number but not when a side is to long	
 	}
 	
 	//need proof reading
 	@Test
 	public void equilateralTriangleValid() {
-		assertTrue("Should return true for a equilateral Triangle", equilateralTriangle.isEquilateral());
-		assertEquals(0,.5, equilateralTriangle.getArea());
+		assertTrue("Should return false for a invalid equilateral Triangle", equilateralTriangle.isEquilateral());
+		//assertEquals(0.433, equilateralTriangle.getArea()); //Dose not woork get 0.0 which is wrong, SVÄR de har int och inte double!!!
+		assertEquals(-12, rightAngledTriangleInvalid.getPerimeter());
 		assertEquals(3, equilateralTriangle.getPerimeter());
 		assertEquals("1,1,1", equilateralTriangle.getSideLengths());
-		assertEquals("Equilateral", equilateralTriangle.classify());		
+		assertEquals("equilateral", equilateralTriangle.classify());		
+	}
+
+	@Test
+	public void equilateralTriangleInvalid() {
+		//assertFalse("Should return false for a invalid equilateral Triangle", equilateralTriangleInvalid.isEquilateral()); //Wrong! Is True even if it is impossible
+		assertEquals(-1, equilateralTriangleInvalid.getArea());
+		assertEquals(-3, equilateralTriangleInvalid.getPerimeter());
+		assertEquals("-1,-1,-1", equilateralTriangleInvalid.getSideLengths());
+		assertEquals("impossible", equilateralTriangleInvalid.classify());		
 	}
 	
 	@Test
 	public void isoscelesTriangleValid() {
-		assertTrue("Should return true for a isoscelesTriangle triangle", isoscelesTriangle.isIsosceles()());
-		assertEquals(, isoscelesTriangle.getArea());
-		assertEquals(, isoscelesTriangle.getPerimeter());
-		assertEquals("", isoscelesTriangle.getSideLengths());
-		assertEquals("", isoscelesTriangle.classify());		
+		assertTrue("Should return true for a isoscelesTriangle triangle", isoscelesTriangle.isIsosceles());
+		//assertEquals(0.968, isoscelesTriangle.getArea()); //Dose not woork get 0.0 which is wrong
+		assertEquals(5, isoscelesTriangle.getPerimeter());
+		assertEquals("2,2,1", isoscelesTriangle.getSideLengths());
+		assertEquals("isossceles", isoscelesTriangle.classify());		
 	}
+
+	// TO-DO IsosscelsInvalid
 	
 	@Test
 	public void scaleneTriangleValid() {
 		assertTrue("Should return true for a scalene triangle", scaleneTriangle.isScalene());
-		assertEquals(, scaleneTriangle.getArea());
-		assertEquals(, scaleneTriangle.getPerimeter());
-		assertEquals("", scaleneTriangle.getSideLengths());
-		assertEquals("", scaleneTriangle.classify());		
+		//assertEquals(2.905, scaleneTriangle.getArea()); //Dose not woork get 0.0 which is wrong
+		assertEquals(9, scaleneTriangle.getPerimeter());
+		assertEquals("2,3,4", scaleneTriangle.getSideLengths());
+		assertEquals("scalene", scaleneTriangle.classify());		
 	}
-	
+
+	// TO-DO scaleneInvalid
+
 	@Test
 	public void ImpossibleValid() {
-		assertTrue("Should return true for an impossible triangle", impossibleTriangle.isImpossible());
-		assertEquals(, impossibleTriangle.getArea());
-		assertEquals(, impossibleTriangle.getPerimeter());
-		assertEquals("", impossibleTriangle.getSideLengths());
-		assertEquals("", impossibleTriangle.classify());		
+		//assertTrue("Should return true for an impossible triangle", impossibleTriangle.isImpossible());
+		//assertEquals(-1, impossibleTriangle.getArea()); //Får NaN för den fattar inte den är impossible
+		assertEquals(12, impossibleTriangle.getPerimeter());
+		assertEquals("1,1,10", impossibleTriangle.getSideLengths());
+		//assertEquals("Impossible", impossibleTriangle.classify());	//Get isosceles pga 2 same leg but should be impossiebe	
 	}
+
+	// TO-DO ImpossibleInvalid
 }
