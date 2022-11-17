@@ -22,7 +22,7 @@ import junit.framework.TestCase;
  * Students should add relevant unit test cases related to the Triangle 
  * class to this class.
  */
-public class TriangleTest_test {
+public class TriangleTest_EP {
 
 	private Triangle rightAngledTriangle;
 	private Triangle equilateralTriangle;
@@ -49,8 +49,8 @@ public class TriangleTest_test {
 		
 		rightAngledTriangleInvalid = new Triangle(-3, -4, -5);
 		equilateralTriangleInvalid = new Triangle(-1, -1, -1);
-		isoscelesTriangleInvalid = new Triangle(0, 0, 1);
-		scaleneTriangleInvalid = new Triangle(-2, 3, 4);
+		isoscelesTriangleInvalid = new Triangle(-2,-2, 1);
+		scaleneTriangleInvalid = new Triangle(-2,-3,-4);
 		impossibleTriangleInvalid = new Triangle(1, 1, -10);
 	}
 
@@ -59,17 +59,17 @@ public class TriangleTest_test {
 	 *   Cleanup method. This method will be run after the Test method is completed
 	 */
 	public void tearDown() throws Exception {
-		rightAngledTriangle = null;
-		equilateralTriangle = null;
-		isoscelesTriangle = null;
-		scaleneTriangle = null;
-		impossibleTriangle = null;
-		
-		rightAngledTriangleInvalid = null;
-		equilateralTriangleInvalid = null;
-		isoscelesTriangleInvalid = null;
-		scaleneTriangleInvalid = null;
-		impossibleTriangleInvalid = null;
+//		rightAngledTriangle = null;
+//		equilateralTriangle = null;
+//		isoscelesTriangle = null;
+//		scaleneTriangle = null;
+//		impossibleTriangle = null;
+//		
+//		rightAngledTriangleInvalid = null;
+//		equilateralTriangleInvalid = null;
+//		isoscelesTriangleInvalid = null;
+//		scaleneTriangleInvalid = null;
+//		impossibleTriangleInvalid = null;
 	}
 
 	
@@ -145,7 +145,7 @@ public class TriangleTest_test {
 
 	@Test
 	public void equilateralTriangleValidPerimiter() {
-		assertEquals(3, rightAngledTriangleInvalid.getPerimeter());
+		assertEquals(3, equilateralTriangle.getPerimeter());
 	}
 		
 	@Test
@@ -233,7 +233,7 @@ public class TriangleTest_test {
 	
 	@Test 
 	public void impossibleTriangleValidisTrue(){
-		assertTrue("Should return true for an impossible triangle", impossibleTriangle.isImpossible());
+		assertTrue("Should return true for an impossible triangle", impossibleTriangle.isImpossible()); // SHould return true, because it is impossible, but thinks its isoscales
 	}
 	
 	@Test 
@@ -268,12 +268,12 @@ public class TriangleTest_test {
 	
 	@Test 
 	public void isoscelesTriangleInvalidPerimeter() {
-		assertEquals(1, isoscelesTriangleInvalid.getPerimeter());
+		assertEquals(3, isoscelesTriangleInvalid.getPerimeter());
 	}
 	
 	@Test 
 	public void isoscelesTriangleInvalidSideLength(){
-		assertEquals("0,0,1", isoscelesTriangleInvalid.getSideLengths());
+		assertEquals("-2,-2,1", isoscelesTriangleInvalid.getSideLengths());
 	}
 	
 	@Test 
@@ -294,12 +294,12 @@ public class TriangleTest_test {
 	
 	@Test 
 	public void scaleneTriangleInvalidPerimeter(){
-		assertEquals(5, scaleneTriangleInvalid.getPerimeter());
+		assertEquals(-9, scaleneTriangleInvalid.getPerimeter());
 	}
 	
 	@Test 
 	public void scaleneTriangleInvalidSideLength(){
-		assertEquals("-2,3,4", scaleneTriangleInvalid.getSideLengths());
+		assertEquals("-2,-3,-4", scaleneTriangleInvalid.getSideLengths());
 	}
 	
 	@Test 
