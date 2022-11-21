@@ -268,7 +268,7 @@ public class TriangleTest_EP {
 	
 	@Test 
 	public void isoscelesTriangleInvalidPerimeter() {
-		assertEquals(3, isoscelesTriangleInvalid.getPerimeter());
+		assertEquals(-3, isoscelesTriangleInvalid.getPerimeter());
 	}
 	
 	@Test 
