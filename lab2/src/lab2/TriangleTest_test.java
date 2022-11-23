@@ -145,7 +145,7 @@ public class TriangleTest_test {
 
 	@Test
 	public void equilateralTriangleValidPerimiter() {
-		assertEquals(3, rightAngledTriangleInvalid.getPerimeter());
+		assertEquals(3, equilateralTriangle.getPerimeter());
 	}
 		
 	@Test
@@ -283,7 +283,7 @@ public class TriangleTest_test {
 	
 	
 	@Test 
-	public void scaleneTriangleInvalidisTrue(){
+	public void scaleneTriangleInvalidisFalse(){
 		assertFalse(scaleneTriangleInvalid.isScalene());
 	}
 	
