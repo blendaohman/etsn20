@@ -44,6 +44,7 @@ public class InsertionSorter {
 				System.exit(1);
 			}
 		}
+		workArrayEmpty = true;  //Change to true for Y
 		
 	}
 	
@@ -55,27 +56,31 @@ public class InsertionSorter {
 	}
 
 	private static void insert(int newY){  
-		if (workArrayEmpty = true)  { // Y empty so far
+		if (workArrayEmpty == true)  { // Y empty so far
 			// easy case
 			Y[0] = newY;
+			workArrayEmpty = false;
+
 			return;
 		}
 	   
 		// need to insert just before the first Y 
 		// element that NewY is less than
-		for (int j = 0; j < numY; j++)  {
+		for (int j = 0; j <= numY; j++)  { //changed to <=
 			if (newY < Y[j])  {
 				// shift Y[j], Y[j+1],... rightward 
 				// before inserting NewY
 				scootOver(j);
 				Y[j] = newY;
 				return;
-	      }
+	      	}
 		}
+		Y[numY] = newY; //If the biggest value put in the back
+
 	}
 	
-	private static void scootOver(int m) {
-		for (int k = numY-1; k > m; k++) {
+	private static void scootOver(int m) { //k decreases instead of other way
+		for (int k = numY; k > m; k--) {
 			Y[k] = Y[k-1];
 		}
 	}
