@@ -11,15 +11,15 @@ public class Search {
 		System.out.print("Enter a string: ");
 		String input = scan.nextLine();
 		
+		scan.close();
 		// search <pattern> <file>
 		String[] split = input.split(" ");
 		
 		String pattern = split[1];
 		File file = new File(split[2]);
-		
-			Scanner fileScanner;
+			
 			try {
-				fileScanner = new Scanner(file);
+				Scanner fileScanner = new Scanner(file);
 				boolean present = false;
 				
 				while(fileScanner.hasNextLine()) {
@@ -40,6 +40,7 @@ public class Search {
 						
 					}
 				}
+				fileScanner.close();
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				throw new Error(e);
