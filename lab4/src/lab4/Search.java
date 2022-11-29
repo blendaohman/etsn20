@@ -18,7 +18,11 @@ public class Search {
 		String pattern = split[1];
 
 		/* Detta är fult men pathen är fucked */
-		File file = new File(System.getProperty("user.dir") + "/src/lab4/" + split[2]);
+		File file = new File(System.getProperty("user.dir") + "/src/lab4/" + split[split.length -1]);
+		
+		String[] searchwords = input.split("search ");
+		
+		
 
 		try {
 
