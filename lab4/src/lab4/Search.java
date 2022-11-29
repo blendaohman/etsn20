@@ -7,47 +7,45 @@ import java.util.*;
 public class Search {
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in); //System.in is a standard input stream.
-		System.out.print("Enter a string: ");
+		Scanner scan = new Scanner(System.in); // System.in is a standard input stream.
+
+		System.out.print("Enter search as search <pattern> <file>: ");
+
 		String input = scan.nextLine();
-		
 		scan.close();
-		// search <pattern> <file>
+
 		String[] split = input.split(" ");
-		
 		String pattern = split[1];
-		File file = new File(split[2]);
-			
-			try {
-				Scanner fileScanner = new Scanner(file);
-				boolean present = false;
-				
-				while(fileScanner.hasNextLine()) {
-					String line = fileScanner.nextLine();
-					System.out.println(line);
-					
-					for(String word : line.split(" ")) {
-						
-						if(word.equals(pattern)) {
-							present = true;
-						}
-						
-						if(present) {
-							System.out.println(line);
-						}
-						
-						present = false;
-						
+
+		/* Detta är fult men pathen är fucked */
+		File file = new File(System.getProperty("user.dir") + "/src/lab4/" + split[2]);
+
+		try {
+
+			Scanner fileScanner = new Scanner(file);
+			boolean present = false;
+
+			while (fileScanner.hasNextLine()) {
+				String line = fileScanner.nextLine();
+
+				for (String word : line.split(" ")) {
+
+					if (word.equals(pattern)) {
+						present = true;
 					}
 				}
-				fileScanner.close();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				throw new Error(e);
+
+				if (present) {
+					System.out.println(line);
+					present = false;
+				}
 			}
-			 
-			
-		//search katt text.txt
-		
+			fileScanner.close();
+		} catch (FileNotFoundException e) {
+			throw new Error(e);
+		}
+
+		// search katt text.txt
+
 	}
 }
