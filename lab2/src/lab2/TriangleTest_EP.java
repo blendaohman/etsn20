@@ -283,7 +283,7 @@ public class TriangleTest_EP {
 	
 	
 	@Test 
-	public void scaleneTriangleInvalidisTrue(){
+	public void scaleneTriangleInvalidisFalse(){
 		assertFalse(scaleneTriangleInvalid.isScalene());
 	}
 	
