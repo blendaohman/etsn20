@@ -17,27 +17,35 @@ public class Search {
 		String pattern = split[1];
 		File file = new File(split[2]);
 		
-			Scanner fileScanner = new Scanner("/" + file);
-			boolean present = false;
-			
-			while(fileScanner.hasNextLine()) {
-				String line = fileScanner.nextLine();
-				System.out.println(line);
+			Scanner fileScanner;
+			try {
+				fileScanner = new Scanner(file);
+				boolean present = false;
 				
-				for(String word : line.split(" ")) {
+				while(fileScanner.hasNextLine()) {
+					String line = fileScanner.nextLine();
+					System.out.println(line);
 					
-					if(word.equals(pattern)) {
-						present = true;
+					for(String word : line.split(" ")) {
+						
+						if(word.equals(pattern)) {
+							present = true;
+						}
+						
+						if(present) {
+							System.out.println(line);
+						}
+						
+						present = false;
+						
 					}
-					
-					if(present) {
-						System.out.println(line);
-					}
-					
-					present = false;
-					
 				}
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				throw new Error(e);
 			}
+			 
+			
 		//search katt text.txt
 		
 	}
