@@ -53,6 +53,7 @@ public class fib {
 	
 		// Calculate the result
 		try {
+			
 		System.out.println (fibonacci (number));
 		}
 		catch (Error e) {}
