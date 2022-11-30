@@ -18,18 +18,14 @@ public class Search {
 		String[] split = input.split(" ");
 		String pattern = split[1];
 
-
-		Path path = Path.of("lab4/src/lab4/");
-		File file = new File(path + "/" + split[2]);
-		//File text = new File("C:/Users/marie/Skola/ProgTest/etsn20/lab4/src/lab4/text.txt");
-		scan.close();	
+		File file = new File(System.getProperty("user.dir") + "/src/lab4/" + split[2]);
+	
 			try {
 				Scanner fileScanner = new Scanner(file);
 				boolean present = false;
 				
 				while(fileScanner.hasNextLine()) {
 					String line = fileScanner.nextLine();
-					//System.out.println(line);
 					
 					for(String word : line.split(" ")) {
 						
