@@ -8,15 +8,16 @@ import java.util.*;
 public class Search {
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in); //System.in is a standard input stream.
-		System.out.print("Enter a string: ");
+		Scanner scan = new Scanner(System.in); // System.in is a standard input stream.
+
+		System.out.print("Enter search as search <pattern> <file>: ");
+
 		String input = scan.nextLine();
-		
 		scan.close();
-		// search <pattern> <file>
+
 		String[] split = input.split(" ");
-		
 		String pattern = split[1];
+
 
 		Path path = Path.of("lab4/src/lab4/");
 		File file = new File(path + "/" + split[2]);
@@ -39,18 +40,16 @@ public class Search {
 					if(present) {
 						System.out.println(line);
 						present = false;
+
 					}
 				}
-				fileScanner.close();
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				throw new Error(e);
-			}
-			 
-			
-		//search katt text.txt
-		//search hej text2.txt
-	
+
+			fileScanner.close();
+		} catch (FileNotFoundException e) {
+			throw new Error(e);
+		}
+
+		// search katt text.txt
 	}
 	
 }
